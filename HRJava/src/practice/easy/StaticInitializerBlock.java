@@ -1,4 +1,4 @@
-package practice.challenges;
+package practice.easy;
 
 public class StaticInitializerBlock {
 	
