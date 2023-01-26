@@ -7,11 +7,7 @@ public class JavaStack {
 
 	/*
 	 * algorithm 
-	 * 
-	 * (this algorithm assumes that the parentheses will always start with
-	 * an open bracket and will either balance with a closing bracket or remain
-	 * unbalanced with no closing bracket) 
-	 * 
+	 *  
 	 * 1) iterate over each ArrayList one by one
 	 * 2) read each element while iterating
 	 * 3) we need to utilize two different data structures simultaneously, ArrayList for reading, and Stack for writing
@@ -61,7 +57,9 @@ public class JavaStack {
 
 				String c = Character.toString(ar0.get(i).charAt(j));
 
-				if (c.equals("(") || c.equals("{") || c.equals("[")) {
+				if (c.equals(")") && st0.empty() || c.equals("}") && st0.empty() || c.equals("]") && st0.empty()) {
+					st0.push(c);
+				} else if (c.equals("(") || c.equals("{") || c.equals("[")) {
 					st0.push(c);
 				} else if ((c.equals(")") && st0.peek().equals("(")) || (c.equals("}") && st0.peek().equals("{"))
 						|| (c.equals("]") && st0.peek().equals("["))) {
